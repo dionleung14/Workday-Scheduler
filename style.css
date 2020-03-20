@@ -59,13 +59,33 @@ textarea{
 
 .saveBtn {
   border-left: 1px solid black;
+  /* border-right: 1px solid black;
   border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px; */
   background-color: #06AED5;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.clearBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgba(206, 9, 9, 0.671);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clearBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }

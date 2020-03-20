@@ -16,11 +16,13 @@ function checkTimes(){
         var savedTask = localStorage.getItem($(this).attr("id"))
         if (textAreaIdInt === currentHour) {
             $(this).addClass("present");
-            // if statements to remove classes
+            $(this).removeClass("past future");
         } else if (textAreaIdInt < currentHour) {
             $(this).addClass("past");
+            $(this).removeClass("present future");
         } else {
             $(this).addClass("future");
+            $(this).removeClass("past present");
         }
 
         if (savedTask) {
@@ -29,8 +31,8 @@ function checkTimes(){
     })
 }
 
-$("i").on("click", function(){
-    var prevTextArea = $(this).parent().prev();
+$(document).on("click", ".saveBtn", function(){
+    var prevTextArea = $(this).prev();
     var task = prevTextArea.val();
     if (task.length) {
         var time = prevTextArea.attr("id")
@@ -38,31 +40,12 @@ $("i").on("click", function(){
     }
 })
 
-// Create .clear on click to clear
- 
-// console.log(textAreaIdArr)
-
-// Identifies which hour should be marked as past, present, or future
-// $.each(textAreaIdArr, function(){
-//     var intElement = parseInt(textAreaIdArr)
-// })
-
-// $.each("textarea", function() {
-//     if($(this).id == currentHour) {
-//         console.log("present")
-//     }
-// })
-
-// Identify the text area element with the id matching the current hour
-// Push class of present
-
-
-// for (i=0; i<textAreaArr.length; i++) {
-//     var currentElement = textAreaArr[i];
-//     console.log(currentElement.attr("id"))
-// }
-// var textAreaId = 
-
+$(document).on("click", ".clearBtn", function(){
+    var prevTextAreaId = $(this).prev().prev().attr("id");
+    var prevTextArea = $(this).prev().prev();
+    localStorage.removeItem(prevTextAreaId);
+    prevTextArea.val("")
+})
 
 // Display today's date in header, id of currentDay
 $("#currentDay").text(`Today is ` + today);
