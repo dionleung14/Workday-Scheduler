@@ -12,22 +12,17 @@ This .md document (README_DCL.md) will describe features on the webpage https://
 * Additional comments and notes
 
 ### Features of index.html
-The index.html file serves as the main and only page of the password generator. Minimalist in design, it was changed very little from the version on the class repository. Minor styling comes from Bootstrap of the button and font family.
+The index.html file serves as the main and only page of the scheduler. It utilizes Bootstrap styling, and provides a structured and organized day planner where the user can type in the corresponding hour-blocks different tasks or reminds, save them, and find that they are still saved upon closing and refreshing the planner. There is a clear button that serves to delete all tasks saved for a certain hour. 
 
 ### Features of style.css
-The style.css file remains unchanged from the version on the class repository with the exception of the styling of the .btn class, which was commented out to allow Bootstrap styling to take precedence.
+The style.css file remains mostly unchanged from the version on the class repository with the exception of adding styling for a .clearBtn class. This new class takes the same styling as the existing save button class.
 
 ### Features of script.js
-The script.js file contains the engine for the password generator. It is commented within the file to provide context to different lines of code. Notably, two custom functions were created outside of the version from the class repository. It is likely that the author is still updating this file in order to code around edge cases and malicious users.
+The script.js file is built with moment.js and utilizes the user's local storage to contain saved tasks. It is commented within the file to provide context to different lines of code. Notably, there is a clear button that clears any saved tasks from local storage of that hour and displays an empty string in the task area, making it appear empty. It is likely that the author is planning to create a fixed position element that displays the current time.
 
 ### Known bugs and glitches
-Several bugs and glitches are present at the time of this writing. They are listed below.
-* Entering a string and then an integer value greater than 128 generates a password.
-* Entering a non-integer value and then an integer value greater than 128 generates a password.
-* Entering a string and then a non-zero integer value less than 8 generates a password.
-* Entering a non-integer value and then a non-zero integer value less than 8 generates a password.
-* Entering a string and then a negative value gives the user prompts but does not generate a password.
-* Entering a non-integer value and then a negative value gives the user prompts but does not generate a password.
+There actually are no known bugs and glitches at the time of this writing.
+The developer has achieved utter perfection.
 
 
 
@@ -35,7 +30,7 @@ Several bugs and glitches are present at the time of this writing. They are list
 ### Additional comments and notes
 The creation of this website was made possible by using Bootstrap CSS Framework. 
 
-> Collaborated in part with Louis, Yared, Marissa, and Zahra.
+> Collaborated in part with Louis and Brett.
 
 ```
 Special thanks to Bootstrap. Could not have done it without their never ending SUPPORT.
